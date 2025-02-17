@@ -189,8 +189,57 @@
     filter: drop-shadow(1px 1px 1px rgb(24, 231, 231));
 }
 
-@media screen and (max-width: 480px) {
+/* Partners */
 
+.slider-container {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.slider {
+    display: flex;
+    width: max-content;
+    animation: scroll-left 25s linear infinite;
+}
+
+.slider.reverse {
+    animation: scroll-right 25s linear infinite;
+}
+
+.slider img {
+    width: 150px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 5px;
+    margin-left: 20px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+@keyframes scroll-left {
+    from{
+        transform: translateX(0);
+    }
+    
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes scroll-right {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@media screen and (max-width: 480px) {
     .home{
         order: 2;
     }
